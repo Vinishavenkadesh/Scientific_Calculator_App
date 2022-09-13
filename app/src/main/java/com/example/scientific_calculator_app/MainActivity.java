@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         String leftStr = oldStr.substring(0, cursorPos);
         String rightStr = oldStr.substring(cursorPos);
 
-        display.setText(String.format("%s%s%s", oldStr, leftStr, strToAdd, rightStr));
+        display.setText(String.format("%s%s%s", leftStr, strToAdd, rightStr));
         display.setSelection(cursorPos + strToAdd.length());
     }
     public void zeroBTNPush(View view){
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(cursorPos != 0 && textLen !=0){
             SpannableStringBuilder selection = (SpannableStringBuilder) display.getText();
-            selection.replace(cursorPos-1, cursorPos, ";" );
+            selection.replace(cursorPos-1, cursorPos, "" );
             display.setText(selection);
             display.setSelection(cursorPos-1);
 
